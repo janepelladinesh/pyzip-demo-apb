@@ -42,7 +42,7 @@
       service: pyzip-demo
     containers:
     - env:
-      image: docker.io/ansibleplaybookbundle/py-zip-demo:latest
+      image: docker.io/dineshcherry/kafkapy:prod
       image_pull_policy: IfNotPresent
       name: pyzip-demo
       ports:
