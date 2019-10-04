@@ -1,4 +1,4 @@
-FROM ansibleplaybookbundle/apb-base
+FROM registry.access.redhat.com/openshift3/apb-base
 
 LABEL "com.redhat.apb.spec"=\
 "dmVyc2lvbjogMS4wCm5hbWU6IHB5emlwLWRlbW8tYXBiCmRlc2NyaXB0aW9uOiBQeXRob24gWmlw\
