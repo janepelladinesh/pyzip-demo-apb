@@ -37,9 +37,4 @@
     selector:
       app: hello-demo-apb
       service: hello-demo
-    ports:
-      - name: 8081-tcp
-        port: 8081
-        protocol: TCP
-        target_port: 8081
     state: "{{ state }}"
