@@ -42,7 +42,7 @@
       service: hello-demo
     containers:
     - env:
-      image: docker.io/careapp/webapp-admin:latest
+      image: docker.io/openshift/python-33-centos7:latest
       image_pull_policy: IfNotPresent
       name: hello-demo
       ports:
