@@ -1,19 +1,3 @@
-- name: create hello-demo service
-  k8s_v1_service:
-    name: hello-demo
-    namespace: '{{ namespace }}'
-    labels:
-      app: hello-demo-apb
-      service: hello-demo
-    selector:
-      app: hello-demo-apb
-      service: hello-demo
-    ports:
-        port: 8081
-        protocol: TCP
-        target_port: 8081
-    state: "{{ state }}"
-
 - name: create deployment config
   openshift_v1_deployment_config:
     name: hello-demo
@@ -43,4 +27,3 @@
     triggers:
     - type: ConfigChange
     state: "{{ state }}"
-
