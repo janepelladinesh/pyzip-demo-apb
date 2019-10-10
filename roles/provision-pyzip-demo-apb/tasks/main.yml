@@ -1,3 +1,20 @@
+- name: create hello-demo service
+  k8s_v1_service:
+    name: hello-demo
+    namespace: '{{ namespace }}'
+    labels:
+      app: hello-demo-apb
+      service: hello-demo
+    selector:
+      app: hello-demo-apb
+      service: hello-demo
+    ports:
+      - name: web
+        port: 8080
+        protocol: TCP
+        target_port: 8080
+    state: "{{ state }}"
+
 - name: create deployment config
   openshift_v1_deployment_config:
     name: hello-demo
@@ -17,24 +34,10 @@
       image: docker.io/poroko/flask-demo-app:latest
       image_pull_policy: IfNotPresent
       name: hello-demo
-      ports:
-      - container_port: 8081
-        protocol: TCP
     dns_policy: ClusterFirst
     restart_policy: Always
     termination_grace_period_seconds: 30
     test: false
     triggers:
     - type: ConfigChange
-    state: "{{ state }}"
-- name: create hello-demo service
-  k8s_v1_service:
-    name: hello-demo
-    namespace: '{{ namespace }}'
-    labels:
-      app: hello-demo-apb
-      service: hello-demo
-    selector:
-      app: hello-demo-apb
-      service: hello-demo
     state: "{{ state }}"
