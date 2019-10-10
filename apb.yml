@@ -1,12 +1,12 @@
 version: 1.0
-name: glask-apb
+name: ask-apb
 description: HELLO Demo APB Implementation
 bindable: False
 async: optional
 metadata: 
   documentationUrl: https://github.com/janepelladinesh/pyzip-demo-apb
   dependencies: ['docker.io/ansibleplaybookbundle/py-zip-demo:latest']
-  displayName: hellopy  DINESH  (APB)
+  displayName: pyflaskweb DINESH  (APB)
   longDescription: APB Implementation of the hello webapp, https://github.com/fusor/py-zip-demo
   providerDisplayName: "Red Hat, Inc."
 plans:
