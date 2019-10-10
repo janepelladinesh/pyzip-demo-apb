@@ -1,12 +1,12 @@
 version: 1.0
-name: helloa-apb
+name: python-apb
 description: HELLO Demo APB Implementation
 bindable: False
 async: optional
 metadata: 
   documentationUrl: https://github.com/janepelladinesh/pyzip-demo-apb
   dependencies: ['docker.io/ansibleplaybookbundle/py-zip-demo:latest']
-  displayName: Hello DINESH  (APB)
+  displayName: PYTHON  DINESH  (APB)
   longDescription: APB Implementation of the hello webapp, https://github.com/fusor/py-zip-demo
   providerDisplayName: "Red Hat, Inc."
 plans:
