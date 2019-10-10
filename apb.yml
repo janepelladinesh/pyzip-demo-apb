@@ -1,5 +1,5 @@
 version: 1.0
-name: aaask-apb
+name: fsk-apb
 description: HELLO Demo APB Implementation
 bindable: False
 async: optional
