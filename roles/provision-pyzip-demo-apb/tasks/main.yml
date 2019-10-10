@@ -1,14 +1,3 @@
-- name: create hello-demo route
-  openshift_v1_route:
-    name: hello-demo
-    namespace: '{{ namespace }}'
-    spec_port_target_port: web
-    labels:
-      app: hello-demo-apb
-      service: hello-demo
-    to_name: hello-demo
-    state: "{{ state }}"
-
 - name: create hello-demo service
   k8s_v1_service:
     name: hello-demo
@@ -20,10 +9,9 @@
       app: hello-demo-apb
       service: hello-demo
     ports:
-      - name: web
-        port: 8080
+        port: 8081
         protocol: TCP
-        target_port: 8080
+        target_port: 8081
     state: "{{ state }}"
 
 - name: create deployment config
@@ -46,7 +34,7 @@
       image_pull_policy: IfNotPresent
       name: hello-demo
       ports:
-      - container_port: 8080
+      - container_port: 8081
         protocol: TCP
     dns_policy: ClusterFirst
     restart_policy: Always
