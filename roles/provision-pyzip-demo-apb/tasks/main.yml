@@ -42,7 +42,7 @@
       service: hello-demo
     containers:
     - env:
-      image: docker.io/openshift/python-33-centos7:latest
+      image: docker.io/poroko/flask-demo-app:latest
       image_pull_policy: IfNotPresent
       name: hello-demo
       ports:
