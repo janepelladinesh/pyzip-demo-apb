@@ -1,20 +1,20 @@
 version: 1.0
-name: py-apb
-description: Python Zip Demo APB Implementation
+name: helloa-apb
+description: HELLO Demo APB Implementation
 bindable: False
 async: optional
 metadata: 
-  documentationUrl: https://github.com/fusor/apb-examples/tree/master/pyzip-demo-apb
+  documentationUrl: https://github.com/janepelladinesh/pyzip-demo-apb
   dependencies: ['docker.io/ansibleplaybookbundle/py-zip-demo:latest']
-  displayName: Pyzip DINESH  (APB)
-  longDescription: APB Implementation of the Python webapp, https://github.com/fusor/py-zip-demo
+  displayName: Hello DINESH  (APB)
+  longDescription: APB Implementation of the hello webapp, https://github.com/fusor/py-zip-demo
   providerDisplayName: "Red Hat, Inc."
 plans:
   - name: default
-    description: Python Zip Demo APB Implementation
+    description: HELLO Demo APB Implementation
     free: True
     metadata:
       displayName: Default
-      longDescription: This plan provides a python webapp for https://github.com/fusor/py-zip-demo
+      longDescription: This plan provides a HELLO app for https://github.com/fusor/py-zip-demo
       cost: $0.00
     parameters: []
