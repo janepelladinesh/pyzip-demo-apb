@@ -1,24 +1,24 @@
-- name: create pyzip-demo route
+- name: create hello-demo route
   openshift_v1_route:
-    name: pyzip-demo
+    name: hello-demo
     namespace: '{{ namespace }}'
     spec_port_target_port: web
     labels:
-      app: pyzip-demo-apb
-      service: pyzip-demo
-    to_name: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
+    to_name: hello-demo
     state: "{{ state }}"
 
-- name: create pyzip-demo service
+- name: create hello-demo service
   k8s_v1_service:
-    name: pyzip-demo
+    name: hello-demo
     namespace: '{{ namespace }}'
     labels:
-      app: pyzip-demo-apb
-      service: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
     selector:
-      app: pyzip-demo-apb
-      service: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
     ports:
       - name: web
         port: 8080
@@ -28,23 +28,23 @@
 
 - name: create deployment config
   openshift_v1_deployment_config:
-    name: pyzip-demo
+    name: hello-demo
     namespace: '{{ namespace }}'
     labels:
-      app: pyzip-demo-apb
-      service: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
     replicas: 1
     selector:
-      app: pyzip-demo-apb
-      service: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
     spec_template_metadata_labels:
-      app: pyzip-demo-apb
-      service: pyzip-demo
+      app: hello-demo-apb
+      service: hello-demo
     containers:
     - env:
-      image: docker.io/dineshcherry/kafkapy:prod
+      image: docker.io/careapp/webapp-admin:latest
       image_pull_policy: IfNotPresent
-      name: pyzip-demo
+      name: hello-demo
       ports:
       - container_port: 8080
         protocol: TCP
